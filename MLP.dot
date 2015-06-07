@@ -1,0 +1,16 @@
+digraph G {
+labelloc="t";
+label="MLP";
+node [shape = oval]; 
+n1[label="Node1\ninput = {Tensor[10]}\lmodule = nn.Linear(10 -> 1)\lgradOutput = {Tensor[1]}" tooltip="[[string \"-- it is common style to mark inputs with ide...\"]]:7"];
+n2[label="Node2\ninput = {Tensor[1]}\lgradOutput = {Tensor[1]}" tooltip="[[C]]:-1"];
+n3[label="Node3\ninput = {Tensor[10]}\lmodule = nn.Tanh\lgradOutput = {Tensor[10]}" tooltip="[[string \"-- it is common style to mark inputs with ide...\"]]:6"];
+n4[label="Node4\ninput = {Tensor[20]}\lmodule = nn.Linear(20 -> 10)\lgradOutput = {Tensor[10]}" tooltip="[[string \"-- it is common style to mark inputs with ide...\"]]:6"];
+n5[label="Node5\ninput = {Tensor[20]}\lmodule = nn.Identity\lgradOutput = {Tensor[20]}" tooltip="[[string \"-- it is common style to mark inputs with ide...\"]]:2"];
+n6[label="Node6\ninput = {Tensor[20]}\lgradOutput = {Tensor[20]}" tooltip="[[C]]:-1"];
+n1 -> n2;
+n3 -> n1;
+n4 -> n3;
+n5 -> n4;
+n6 -> n5;
+}

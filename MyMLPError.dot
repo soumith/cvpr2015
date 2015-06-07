@@ -1,0 +1,17 @@
+digraph G {
+labelloc="t";
+label="MyMLPError";
+node [shape = oval]; 
+n1[label="output (1)\nmodule = nn.Linear(10 -> 1)" tooltip="[[string \"-- We need to set debug flag to true...\"]]:12"];
+n2[label="Node2\ninput = {}" tooltip="[[C]]:-1"];
+n3[label="h2 (3)\nmodule = nn.Sigmoid" tooltip="[[string \"-- We need to set debug flag to true...\"]]:11"];
+n4[label="h1 (4)\ninput = {Tensor[15]}\lmodule = nn.Linear(20 -> 10)" tooltip="[[string \"-- We need to set debug flag to true...\"]]:10"];
+n5[label="input (5)\ninput = {Tensor[15]}\lmodule = nn.Identity" tooltip="[[string \"-- We need to set debug flag to true...\"]]:6"];
+n6[label="Node6\ninput = {Tensor[15]}" tooltip="[[C]]:-1"];
+n1 -> n2;
+n3 -> n1;
+n4 -> n3;
+n5 -> n4;
+n6 -> n5;
+n4[style=filled, fillcolor=red];
+}

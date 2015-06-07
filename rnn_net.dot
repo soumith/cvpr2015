@@ -1,0 +1,27 @@
+digraph G {
+labelloc="t";
+label="rnn_net";
+node [shape = oval]; 
+n1[label="next_h (1)\nmodule = nn.Tanh" tooltip="[[string \"function get_rnn(input_size, rnn_size)...\"]]:11"];
+n2[label="Node2\ninput = {}" tooltip="[[C]]:-1"];
+n3[label="added_h (3)\nmodule = nn.CAddTable\lmapindex = {Node4,Node5}" tooltip="[[string \"function get_rnn(input_size, rnn_size)...\"]]:10"];
+n4[label="i2h (4)\nmodule = nn.Linear(128 -> 128)" tooltip="[[string \"function get_rnn(input_size, rnn_size)...\"]]:8"];
+n5[label="h2h (5)\nmodule = nn.Linear(128 -> 128)" tooltip="[[string \"function get_rnn(input_size, rnn_size)...\"]]:9"];
+n6[label="input (6)\nmodule = nn.Identity" tooltip="[[string \"function get_rnn(input_size, rnn_size)...\"]]:4"];
+n7[label="prev_h (7)\nmodule = nn.Identity" tooltip="[[string \"function get_rnn(input_size, rnn_size)...\"]]:5"];
+n8[label="Node8\ninput = {}\lselectindex = 1" tooltip="[[C]]:-1-1"];
+n9[label="Node9\ninput = {}\lselectindex = 2" tooltip="[[C]]:-1-2"];
+n10[label="Node10\nnSplitOutputs = 2" tooltip="[[C]]:-1-mnode"];
+n11[label="Node11\ninput = {}" tooltip="[[C]]:-1"];
+n1 -> n2;
+n3 -> n1;
+n4 -> n3;
+n5 -> n3;
+n6 -> n4;
+n7 -> n5;
+n8 -> n6;
+n9 -> n7;
+n10 -> n8;
+n10 -> n9;
+n11 -> n10;
+}

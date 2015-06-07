@@ -1,0 +1,12 @@
+digraph G {
+labelloc="t";
+label="kk";
+node [shape = oval]; 
+n1[label="linear_module (1)\nmodule = nn.Linear(10 -> 10)" tooltip="[stdin]:5"];
+n2[label="Node2\ninput = {}" tooltip="[[C]]:-1"];
+n3[label="input_x (3)\nmodule = nn.Identity" tooltip="[stdin]:4"];
+n4[label="Node4\ninput = {}" tooltip="[[C]]:-1"];
+n1 -> n2;
+n3 -> n1;
+n4 -> n3;
+}
